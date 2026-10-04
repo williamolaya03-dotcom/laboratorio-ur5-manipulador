@@ -1,0 +1,35 @@
+ Program
+   Robot Program
+     Set DO[0]=Off
+     MoveJ
+       Home1
+     MoveL
+       Recogida1_arrib
+       Recogida1
+     Set DO[0]=On
+     Wait: 0.5
+     MoveL
+       Recogida1_arrib
+       Entrega1_arriba
+       Entrega1
+     Set DO[0]=Off
+     Wait: 0.5
+     MoveL
+       Entrega1_arriba
+     MoveL
+       Recogida2_arrib
+       Recogida2
+     Set DO[0]=On
+     Wait: 0.5
+     MoveL
+       Recogida2_arrib
+       Entrega2_arriba
+       Entrega2
+     Set DO[0]=Off
+     Wait: 0.5
+     MoveL
+       Entrega2_arriba
+     MoveJ
+       Home1
+     Wait DI[0]=LO
+     Wait DI[0]=HI

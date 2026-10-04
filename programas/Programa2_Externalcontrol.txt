@@ -1,0 +1,6 @@
+ Program
+   Robot Program
+     Set DO[1]=On
+     Popup: El control se compartira con ROS2 cinco segundos despues de confirmar este mensaje
+     Wait: 5.0
+     Control by Ubuntu_ROS2

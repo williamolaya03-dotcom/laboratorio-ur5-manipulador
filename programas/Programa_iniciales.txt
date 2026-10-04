@@ -1,0 +1,56 @@
+ Program
+   Robot Program
+     MoveJ
+       Home1
+       Popup: Se simulara la letra W del integrante con iniciales WO
+       MoveL
+         W_Inicio_Arriba
+         W1
+         W2
+         W3
+         W4
+         W5
+         W_fin_arriba
+         Popup: Se simuara la letra O del integrante con las iniciales WO
+         O_inicio_arriba
+         O1
+         O2
+         O3
+         O4
+         O5
+         O6
+         O7
+         O8
+         O9
+         O10
+         O11
+         O12
+         O13
+         O_fin_arriba
+         Popup: Se simulara la letra P del integrante con las iniciales PR
+         P_inicio_arriba
+         P1
+         P2
+         P3
+         P4
+         P5
+         P6
+         P7
+         P8
+         P8_arriba
+         Popup: Se simulara la letra R
+         R_inicio_arriba
+         R1
+         R2
+         R3
+         R4
+         R5
+         R6
+         R7
+         R8
+         R8_arriba
+         Popup: Se simulara la letra R.Trazo 2:diagonal
+         R9_arriba
+         R9
+         R10
+         R_fin_arriba

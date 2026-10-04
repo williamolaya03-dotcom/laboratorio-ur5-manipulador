@@ -1,0 +1,96 @@
+def Programa_PickPlace():
+  set_standard_analog_input_domain(0, 1)
+  set_standard_analog_input_domain(1, 1)
+  set_tool_analog_input_domain(0, 1)
+  set_tool_analog_input_domain(1, 1)
+  set_analog_outputdomain(0, 0)
+  set_analog_outputdomain(1, 0)
+  set_input_actions_to_default()
+  step_count_ec848798_e229_4b4f_a1ae_adc986fa359f = 0.0
+  thread Step_Counter_Thread_7c991857_774f_46ef_b6ad_21fa12a4a815():
+    while (True):
+      step_count_ec848798_e229_4b4f_a1ae_adc986fa359f = step_count_ec848798_e229_4b4f_a1ae_adc986fa359f + 1.0
+      sync()
+    end
+  end
+  run Step_Counter_Thread_7c991857_774f_46ef_b6ad_21fa12a4a815()
+  set_safety_mode_transition_hardness(1)
+  set_gravity([0.0, 0.0, 9.82])
+  set_tcp(p[0.0,0.0,0.0,0.0,0.0,0.0])
+  set_payload(0.5, [0.0, 0.0, 0.05])
+  set_tool_voltage(0)
+  # begin: URCap Installation Node
+  #   Source: External Control, 1.0.5, FZI Research Center for Information Technology
+  #   Type: External Control
+  # end: URCap Installation Node
+  while (True):
+    $ 1 "Robot Program"
+    $ 2 "Set DO[0]=Off"
+    set_standard_digital_out(0, False)
+    set_payload(0.5)
+    $ 3 "MoveJ"
+    $ 4 "Home1" "breakAfter"
+    movej(get_inverse_kin(p[.349999980891, -.000000009801, .400000017349, -.000000033462, 3.141185121458, .000000117007], qnear=[0.3171784579753876, -1.1990464369403284, -1.949850861226217, -1.5631044546710413, 1.5706692934036255, 1.887974739074707]), a=1.3962634015954636, v=1.0471975511965976)
+    $ 5 "MoveL"
+    $ 6 "Recogida1_arrib" "breakAfter"
+    movel(p[.299999979689, -.119999952073, .350000124109, .000000210912, -3.141185688696, -.000000176538], a=0.1, v=0.05)
+    $ 7 "Recogida1" "breakAfter"
+    movel(p[.299999990890, -.119999952455, .250000105772, .000000210909, -3.141185926961, -.000000163094], a=0.1, v=0.05)
+    $ 8 "Set DO[0]=On"
+    set_standard_digital_out(0, True)
+    set_payload(0.7)
+    $ 9 "Wait: 0.5"
+    sleep(0.5)
+    $ 10 "MoveL"
+    $ 11 "Recogida1_arrib" "breakAfter"
+    movel(p[.299999979689, -.119999952073, .350000124109, .000000210912, -3.141185688696, -.000000176538], a=0.1, v=0.05)
+    $ 12 "Entrega1_arriba" "breakAfter"
+    movel(p[.419999989702, .100000001136, .350000173440, .000000205470, -3.141186286962, -.000000467176], a=0.1, v=0.05)
+    $ 13 "Entrega1" "breakAfter"
+    movel(p[.419999969426, .099999990362, .250000014500, .000000205470, -3.141186286962, -.000000467176], a=0.1, v=0.05)
+    $ 14 "Set DO[0]=Off"
+    set_standard_digital_out(0, False)
+    set_payload(0.5)
+    $ 15 "Wait: 0.5"
+    sleep(0.5)
+    $ 16 "MoveL"
+    $ 17 "Entrega1_arriba" "breakAfter"
+    movel(p[.419999989702, .100000001136, .350000173440, .000000205470, -3.141186286962, -.000000467176], a=0.1, v=0.05)
+    $ 18 "MoveL"
+    $ 19 "Recogida2_arrib" "breakAfter"
+    movel(p[.299999983097, -.020000007854, .350000152536, .000000128543, -3.141186659990, -.000000577680], a=0.1, v=0.05)
+    $ 20 "Recogida2" "breakAfter"
+    movel(p[.299999964066, -.020000013822, .249999966198, .000000128520, -3.141186432568, -.000000465265], a=0.1, v=0.05)
+    $ 21 "Set DO[0]=On"
+    set_standard_digital_out(0, True)
+    set_payload(0.7)
+    $ 22 "Wait: 0.5"
+    sleep(0.5)
+    $ 23 "MoveL"
+    $ 24 "Recogida2_arrib" "breakAfter"
+    movel(p[.299999983097, -.020000007854, .350000152536, .000000128543, -3.141186659990, -.000000577680], a=0.1, v=0.05)
+    $ 25 "Entrega2_arriba" "breakAfter"
+    movel(p[.419999895490, -.000000025146, .349999953189, .000000039458, -3.141186212986, -.000000461972], a=0.1, v=0.05)
+    $ 26 "Entrega2" "breakAfter"
+    movel(p[.419999903654, -.000000022928, .249999960802, .000000039458, -3.141186212986, -.000000461972], a=0.1, v=0.05)
+    $ 27 "Set DO[0]=Off"
+    set_standard_digital_out(0, False)
+    set_payload(0.5)
+    $ 28 "Wait: 0.5"
+    sleep(0.5)
+    $ 29 "MoveL"
+    $ 30 "Entrega2_arriba" "breakAfter"
+    movel(p[.419999895490, -.000000025146, .349999953189, .000000039458, -3.141186212986, -.000000461972], a=0.1, v=0.05)
+    $ 31 "MoveJ"
+    $ 32 "Home1" "breakAfter"
+    movej(get_inverse_kin(p[.349999980891, -.000000009801, .400000017349, -.000000033462, 3.141185121458, .000000117007], qnear=[0.3171784579753876, -1.1990464369403284, -1.949850861226217, -1.5631044546710413, 1.5706692934036255, 1.887974739074707]), a=1.3962634015954636, v=1.0471975511965976)
+    $ 33 "Wait DI[0]=LO"
+    while (get_standard_digital_in(0) == True):
+      sync()
+    end
+    $ 34 "Wait DI[0]=HI"
+    while (get_standard_digital_in(0) == False):
+      sync()
+    end
+  end
+end
